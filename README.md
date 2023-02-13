@@ -8,5 +8,7 @@ Steps
     - python manage.py makemigrations
     - python manage.py migrate
     - python manage.py runserver
-4. insert the http://localhost:8000/products/ in any browser 
+4. Insert the http://localhost:8000/admin/ in browser
+    - login the system using superuser credentials
+5. Then http://localhost:8000/products/ 
 5. add products then view product, edit and delete 
