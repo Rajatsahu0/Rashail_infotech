@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{% if request.resolver_match.url_name == 'product_create' %}Add{% else %}Edit{% endif %} Product</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Save">
+  </form>
+{% endblock %}

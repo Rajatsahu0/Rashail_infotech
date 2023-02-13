@@ -1,0 +1,29 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Product List</h1>
+  <ul>
+  {% for product in object_list %}
+    <li >
+      <a href="{% url 'product_detail' product.pk %}">
+        {{ product.name }} - {{ product.price }}
+      </a>
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      <a href="{% url 'product_detail' product.pk %}">View</a>
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      <a href="{% url 'product_edit' product.pk %}">Edit</a>
+    </li>
+    <br>
+    <form action="{% url 'product_delete' product.pk %}" method="post">
+      {% csrf_token %}
+      <button type="submit">Delete</button>
+    </form>
+
+  {% endfor %}
+  </ul>
+{% endblock %}
